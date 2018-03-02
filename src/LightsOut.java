@@ -81,6 +81,7 @@ public class LightsOut extends JFrame {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						LightButton button = (LightButton) e.getSource();
+						if ()
 						//toggle();
 						/*if (terrain[r][c].Background() == Color.BLUE){
 							terrain[r][c].setBackground(Color.WHITE);
