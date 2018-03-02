@@ -1,9 +1,10 @@
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JButton;
 
 public class LightButton extends JButton {
-	private static final int SIZE = 50;
+	private static final int SIZE = 200;
 	
 	boolean ison = false;
 	Dimension size = new Dimension (SIZE, SIZE);
@@ -13,6 +14,13 @@ public class LightButton extends JButton {
 	}
 
 	//public int setIsOn() {
+	
+	public String color() {
+		board[r][c] = setBackground(Color.BLUE);
+		board[r][c] = setBackground(Color.WHITE);
+		
+		
+	}
 		
 	//}
 	

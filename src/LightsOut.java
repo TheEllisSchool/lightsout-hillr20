@@ -29,9 +29,12 @@ public class LightsOut extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JPanel titlePanel = new JPanel();
 	
+	//public static boolean[][] color = new boolean[5][5];;
+	
 	
 	public LightsOut(){
 		initGUI();
+		boolean[][] color = new boolean[GRIDSIZE][GRIDSIZE];
 		
 		setTitle("Lights Out");
 		setSize(200, 200); //pixels
@@ -50,6 +53,12 @@ public class LightsOut extends JFrame {
 		titlePanel.setBackground(Color.BLACK);
 		JLabel titleLabel = new JLabel("Welcome to Lights Out");
 		
+		JButton LightButton;
+		//LightButton();
+		//button.setBackground(Color.BLUE);
+		
+		
+		
 		titlePanel.add(titleLabel);
 		titleLabel.setHorizontalAlignment(JLabel.CENTER); //left or right
 		Font titlefont = new Font("Georgia", Font.BOLD, 18);
@@ -59,17 +68,27 @@ public class LightsOut extends JFrame {
 		JPanel centerPanel = new JPanel();
 		centerPanel.setLayout(new GridLayout(GRIDSIZE, GRIDSIZE));
 		add(centerPanel, BorderLayout.CENTER);
+		centerPanel.setBackground(Color.WHITE);
+		
 	
 		centerPanel.setLayout(new GridLayout(GRIDSIZE, GRIDSIZE));
 		add(centerPanel, BorderLayout.CENTER);
 		for (int r = 0; r < GRIDSIZE; r++) {
 			for (int c = 0; c < GRIDSIZE; c++) {
 				terrain[r][c] = new LightButton();
+				terrain[r][c].setBackground(Color.WHITE);
 				terrain[r][c].addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						LightButton button = (LightButton) e.getSource();
 						//toggle();
+						/*if (terrain[r][c].Background() == Color.BLUE){
+							terrain[r][c].setBackground(Color.WHITE);
+							
+						}
+						else {
+							terrain[r][c].setBackground(Color.BLUE);
+						}*/
 						
 						//int row = button.getRow();
 						//int col = button.getCol();
@@ -113,20 +132,13 @@ public class LightsOut extends JFrame {
 	
 	public void buttonClicked(int r, int c) {
 		//toggle button
+		//if the color is one change it to the other
+		terrain[r][c].toggle();
 		//toggle neighbor 
-		if (terrain[r][c].hasHole()){
-			String message = "Game over! You stepped on a hole and lost. Do you want to play again?";
-			promptForNewGame(message);
-		}
-		else {
-			check(row, col);
-			checkNeighbors(row, col);
-			if ((GRIDSIZE*GRIDSIZE) - NUMBEROFHOLES == totalRevealed){
-				String message = "Yay, you won! You found all the mines. Do you want to play again?";
-				promptForNewGame(message);
-			}
-			
-		}
+		//toggle();
+		//check(r, c);
+		//checkNeighbors(r, c);
+		//promptForNewGame(message);	
 	}
 	
 	private void promptForNewGame(String message) {
