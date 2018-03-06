@@ -29,6 +29,13 @@ public class LightsOut extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JPanel titlePanel = new JPanel();
 	
+	boolean isOn = false;
+	//terrain[r][c].setBackground(Color.BLUE);
+	
+	/*if (isOn == false) {
+		terrain[r][c].setBackground(Color.BLUE);
+	}*/
+	
 	//public static boolean[][] color = new boolean[5][5];;
 	
 	
@@ -56,7 +63,7 @@ public class LightsOut extends JFrame {
 		JButton LightButton;
 		//LightButton();
 		//button.setBackground(Color.BLUE);
-		
+	
 		
 		
 		titlePanel.add(titleLabel);
@@ -81,7 +88,7 @@ public class LightsOut extends JFrame {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						LightButton button = (LightButton) e.getSource();
-						if ()
+						//if (terrain[r][c] == 
 						//toggle();
 						/*if (terrain[r][c].Background() == Color.BLUE){
 							terrain[r][c].setBackground(Color.WHITE);

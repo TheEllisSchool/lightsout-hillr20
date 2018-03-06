@@ -15,12 +15,12 @@ public class LightButton extends JButton {
 
 	//public int setIsOn() {
 	
-	public String color() {
-		board[r][c] = setBackground(Color.BLUE);
-		board[r][c] = setBackground(Color.WHITE);
+	/*public String color() {
+		terrain[r][c].setBackground(Color.BLUE);
+		terrain[r][c].setBackground(Color.WHITE);
 		
 		
-	}
+	}*/
 		
 	//}
 	
@@ -28,10 +28,12 @@ public class LightButton extends JButton {
 		//if off, turn it to on, if on, turn it to off
 		if (ison) {
 			ison = false;
-			
+			setBackground(Color.BLUE);
+				
 		}
 		else {
 			ison = true;
+			setBackground(Color.WHITE);
 		}
 	}
 	public void reset() {
